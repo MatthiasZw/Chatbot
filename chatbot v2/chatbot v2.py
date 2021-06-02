@@ -25,7 +25,7 @@ class Chatbot:
         self.__message = str(message)
 
     def get_Response(self):
-        """ get_REsponse
+        """ get_Response
             wird verwendet, um dem Chatbot die richtige Antwort zu entlocken
             Verwendung:
             response = bot.get_Response()
@@ -39,7 +39,7 @@ class Chatbot:
                 self.__intelligentAnswers = True
                 self.__response = self.__reaktionen[word]
         if not self.__intelligentAnswers:
-            self.__response == random.choice(self.__zufallsantworten)   
+            self.__response = random.choice(self.__zufallsantworten)   
 
         return self.__response     
         
