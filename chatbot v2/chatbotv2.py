@@ -3,18 +3,17 @@
 
 import random
 
+
 class Chatbot:
     """ Eine Klasse für einen Chatbot
         Verwendung:
         bot = Chatbot(reaktionen, zufallsantworten)
     """
 
-
     def __init__(self, reaktionen, zufallsantworten):
         # Konstruktor der Klasse
         self.__reaktionen = dict(reaktionen)
         self.__zufallsantworten = list(zufallsantworten)
-
 
     def set_Message(self, message):
         """ set_Message
@@ -31,7 +30,7 @@ class Chatbot:
             response = bot.get_Response()
         """
         self.__message = self.__message.lower()
-        self.__words = self.__message.split()     
+        self.__words = self.__message.split()
         self.__intelligentAnswers = False
 
         for word in self.__words:
@@ -39,10 +38,10 @@ class Chatbot:
                 self.__intelligentAnswers = True
                 self.__response = self.__reaktionen[word]
         if not self.__intelligentAnswers:
-            self.__response = random.choice(self.__zufallsantworten)   
+            self.__response = random.choice(self.__zufallsantworten)
 
-        return self.__response     
-        
+        return self.__response
+
 
 def main():
     # Listen
@@ -51,8 +50,8 @@ def main():
                         "Das kann man so sehen",
                         "Ich verstehe"]
     reaktionen = {"hallo": "aber hallo",
-                      "geht": "was verstehst du darunter?",
-                      "schmeckt": "ich habe keinen Geschmackssinn."}
+                  "geht": "was verstehst du darunter?",
+                  "schmeckt": "ich habe keinen Geschmackssinn."}
 
     # Ausgabe Begrüßung
     print("Willkommen beim Chatbot v2")
@@ -65,10 +64,10 @@ def main():
 
     # Logik
     nutzereingabe = ""
-    while nutzereingabe !="bye":
+    while nutzereingabe != "bye":
         nutzereingabe = ""
-        while nutzereingabe =="":
-                nutzereingabe = input("Ihre Frage oder Antwort: ")
+        while nutzereingabe == "":
+            nutzereingabe = input("Ihre Frage oder Antwort: ")
         if nutzereingabe == "bye":
             break
         bot.set_Message(nutzereingabe)
@@ -77,8 +76,6 @@ def main():
     # Ausgabe Verabschiedung
     print("Bis zum nächsten Mal.")
 
+
 if __name__ == "__main__":
-    main ()
-
-
-
+    main()
